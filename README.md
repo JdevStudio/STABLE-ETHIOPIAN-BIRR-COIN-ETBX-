@@ -1,15 +1,6 @@
 # Brazilian Real Stable Coin - Project Overview 
 
-This project creates a coin Brazilian-real peggued stable coin based on ERC20 protocol on the Ethereum.
-
-A crypto stable coins offer following benefits:
-
-- In case, the fiat currency crashes in value (due to inflation or risk of maxi-devaluation); local citizens can exchange the crashed money for EUR-backed, USD-backed, or asset-backed stablecoins before they lose their savings. In this way, people get protected from further drops in the value of the local currency.
-- Stablecoins can be used like any other currency for day-to-day purposes. From buying morning coffee to transferring funds to the family, we can use a digital wallet to pay with stable coins without potentialyl high-fees associated with the credit/debit card and banking services
-- The stable currency is especially beneficial for overseas payments, as there is no need to convert different fiat currencies. A person in China could receive BRL-backed stablecoins without converting them into Yuan.
-- Simplifying P2P and recurring payments: an employer can deploy a smart contract that automatically transfers stable coins as a salary to employees at the end of the month. It is especially helpful for organizations that have employees all over the world. It will reduce the high fees and a long process of exchanging fiat currency from a bank account in New York to a European bank account.
-- Quick and affordable remittances for migrant workers: migrant workers send payments through platforms like Western Union to transfer money back to their loved ones and family. This complete process is quite expensive and slow due to which families lose a big chunk of funds due to high fees. Stablecoins can be a better alternative to this problem as workers and their families can use digital wallets across the globe to transfer stablecoins instantly with low fees and no volatility.
-- 
+This project is a tutorial around the creation of a Brazilian-real peggued stable coin based on ERC20 protocol on the Ethereum.
 
 # Stable Coins
 
@@ -30,6 +21,16 @@ There are three main categories of stable coins:
 - Algorithmic (also called Seigniorage Shares ): Value of the coin is kept stable by algorithmically expanding or contracting the supply of coins in circulation. Ex: Terra & Ampleforth.
 
 What makes a coin to be a stablecoin is an ability to exchange it for certain amount of underlying stable asset (fiat currency in this project), and people's trust that this ability will persist in future.
+
+## Benefits
+
+A crypto stable coins offer following benefits:
+
+- In case, the fiat currency crashes in value (due to inflation or risk of maxi-devaluation); local citizens can exchange the crashed money for EUR-backed, USD-backed, or asset-backed stablecoins before they lose their savings. In this way, people get protected from further drops in the value of the local currency.
+- Stablecoins can be used like any other currency for day-to-day purposes. From buying morning coffee to transferring funds to the family, we can use a digital wallet to pay with stable coins without potentialyl high-fees associated with the credit/debit card and banking services
+- The stable currency is especially beneficial for overseas payments, as there is no need to convert different fiat currencies. A person in China could receive BRL-backed stablecoins without converting them into Yuan.
+- Simplifying P2P and recurring payments: an employer can deploy a smart contract that automatically transfers stable coins as a salary to employees at the end of the month. It is especially helpful for organizations that have employees all over the world. It will reduce the high fees and a long process of exchanging fiat currency from a bank account in New York to a European bank account.
+- Quick and affordable remittances for migrant workers: migrant workers send payments through platforms like Western Union to transfer money back to their loved ones and family. This complete process is quite expensive and slow due to which families lose a big chunk of funds due to high fees. Stablecoins can be a better alternative to this problem as workers and their families can use digital wallets across the globe to transfer stablecoins instantly with low fees and no volatility.
 
 # Fiat-backed Stable Coin
 
@@ -55,3 +56,16 @@ Programming language: Solidity
 Network: Ethereum
 Ticker: BRLT
 Underlying currency: Brazilian Real (BRL)
+
+## Solidity
+
+[Solidity](https://solidity.readthedocs.io/) is an object-oriented programming language for writing smart contracts. It is used for implementing smart contracts on various blockchain platforms, most notably, Ethereum. Solidity was influenced by C++, Python and JavaScript and is designed to target the Ethereum Virtual Machine (EVM).
+
+Solidity is statically typed, supports inheritance, libraries and complex user-defined types among other features. With Solidity we can create contracts for uses such as voting, crowdfunding, blind auctions, and multi-signature wallets.
+
+## Tooling
+
+- Remix Ethereum - online IDE for developing smart contracts on Ethereum blockchain
+- MetaMask
+- Etherscan
+- [Rinkeby Authenticated Faucet](https://faucet.rinkeby.io/)
