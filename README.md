@@ -57,13 +57,13 @@ Network: Ethereum
 Ticker: BRLT
 Underlying currency: Brazilian Real (BRL)
 
-## Solidity
+## Solidity Programming Language
 
 [Solidity](https://solidity.readthedocs.io/) is an object-oriented programming language for writing smart contracts. It is used for implementing smart contracts on various blockchain platforms, most notably, Ethereum. Solidity was influenced by C++, Python and JavaScript and is designed to target the Ethereum Virtual Machine (EVM).
 
 Solidity is statically typed, supports inheritance, libraries and complex user-defined types among other features. With Solidity we can create contracts for uses such as voting, crowdfunding, blind auctions, and multi-signature wallets.
 
-## Compiling
+## Tools
 
 To run this project, you will need following tools:
 
@@ -72,14 +72,7 @@ To run this project, you will need following tools:
 - Etherscan
 - [Rinkeby Authenticated Faucet](https://faucet.rinkeby.io/)
 
-## Contract parameters for testing
-
-"10000","Brazilian Real Token","2","BRLT"
-
-_initial= "10000"
-_tokenName = "Brazilian Real Token"
-_decimalUnits = "2"
-_tokenSymbol = "BRLT"
+# Code structure
 
 The contract BRLT implements the EIP20Interface abstract interface. Code below shows the contract constructor:
 
@@ -97,3 +90,12 @@ constructor(
         symbol = _tokenSymbol;                               // Set the symbol for display purposes
     }
 ```
+
+## Contract parameters for testing
+
+"10000","Brazilian Real Token","2","BRLT"
+
+_initial= "10000"
+_tokenName = "Brazilian Real Token"
+_decimalUnits = "2"
+_tokenSymbol = "BRLT"
