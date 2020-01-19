@@ -2,7 +2,7 @@
 BRLT - Brazilian Real Stable Coin
 Implements EIP20 token standard: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
 .*/
-pragma solidity ^0.4.21;
+pragma solidity ^0.5.11;
 
 import "./EIP20Interface.sol";
 
@@ -12,15 +12,16 @@ contract BRLT is EIP20Interface {
     uint256 constant private MAX_UINT256 = 2**256 - 1;
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
-        string public name; 
-    uint8 public decimals;
-    string public symbol; 
 
-    function BRLT(
+    string public name;
+    uint8 public decimals;
+    string public symbol;
+
+    constructor(
         uint256 _initialAmount,
-        string _tokenName,
+        string memory _tokenName,
         uint8 _decimalUnits,
-        string _tokenSymbol
+        string memory _tokenSymbol
     ) public {
         balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
         totalSupply = _initialAmount;                        // Update total supply
@@ -30,7 +31,7 @@ contract BRLT is EIP20Interface {
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
-        require(balances[msg.sender] >= _value);
+        require(balances[msg.sender] >= _value, "insuficient balance");
         balances[msg.sender] -= _value;
         balances[_to] += _value;
         emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
@@ -39,7 +40,7 @@ contract BRLT is EIP20Interface {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         uint256 allowance = allowed[_from][msg.sender];
-        require(balances[_from] >= _value && allowance >= _value);
+        require(balances[_from] >= _value && allowance >= _value, "insuficient balance");
         balances[_to] += _value;
         balances[_from] -= _value;
         if (allowance < MAX_UINT256) {
