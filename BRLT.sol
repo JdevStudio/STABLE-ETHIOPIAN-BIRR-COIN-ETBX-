@@ -6,29 +6,44 @@ pragma solidity ^0.5.11;
 
 import "./EIP20Interface.sol";
 
-
 contract BRLT is EIP20Interface {
 
     uint256 constant private MAX_UINT256 = 2**256 - 1;
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
 
-    string public name;
-    uint8 public decimals;
-    string public symbol;
+    string public _name= "Brazilian Real Stable Coin";
+    uint8 public _decimals = 6;
+    string public _symbol = "BRLT";
 
     constructor(
-        uint256 _initialAmount,
-        string memory _tokenName,
-        uint8 _decimalUnits,
-        string memory _tokenSymbol
+        uint256 initialAmount,
+        string memory tokenName,
+        uint8 decimalUnits,
+        string memory tokenSymbol
     ) public {
-        balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
-        totalSupply = _initialAmount;                        // Update total supply
-        name = _tokenName;                                   // Set the name for display purposes
-        decimals = _decimalUnits;                            // Amount of decimals for display purposes
-        symbol = _tokenSymbol;                               // Set the symbol for display purposes
+        balances[msg.sender] = initialAmount;               // Give the creator all initial tokens
+        totalSupply = initialAmount;                        // Update total supply
+        _name = tokenName;                                   // Set the name for display purposes
+        _decimals = decimalUnits;                            // Amount of decimals for display purposes
+        _symbol = tokenSymbol;                               // Set the symbol for display purposes
     }
+
+    // Returns the name of the token
+    function name() public view returns (string memory) {
+        return _name;
+    }
+
+    // Returns the ticker of the token
+    function symbol() public view returns (string memory) {
+        return _symbol;
+    }
+
+    // Returns the number of decimals the token uses.
+    function decimals() public view returns (uint8) {
+        return _decimals;
+    }
+
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balances[msg.sender] >= _value, "insuficient balance");
