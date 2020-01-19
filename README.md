@@ -63,9 +63,37 @@ Underlying currency: Brazilian Real (BRL)
 
 Solidity is statically typed, supports inheritance, libraries and complex user-defined types among other features. With Solidity we can create contracts for uses such as voting, crowdfunding, blind auctions, and multi-signature wallets.
 
-## Tooling
+## Compiling
+
+To run this project, you will need following tools:
 
 - Remix Ethereum - online IDE for developing smart contracts on Ethereum blockchain
 - MetaMask
 - Etherscan
 - [Rinkeby Authenticated Faucet](https://faucet.rinkeby.io/)
+
+## Contract parameters for testing
+
+"10000","Brazilian Real Token","2","BRLT"
+
+_initial= "10000"
+_tokenName = "Brazilian Real Token"
+_decimalUnits = "2"
+_tokenSymbol = "BRLT"
+
+The contract BRLT implements the EIP20Interface abstract interface. Code below shows the contract constructor:
+
+```javascript
+constructor(
+        uint256 _initialAmount,
+        string memory _tokenName,
+        uint8 _decimalUnits,
+        string memory _tokenSymbol
+    ) public {
+        balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
+        totalSupply = _initialAmount;                        // Update total supply
+        name = _tokenName;                                   // Set the name for display purposes
+        decimals = _decimalUnits;                            // Amount of decimals for display purposes
+        symbol = _tokenSymbol;                               // Set the symbol for display purposes
+    }
+```
