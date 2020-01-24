@@ -2,7 +2,7 @@
 BRLT - Brazilian Real Stable Coin
 Implements EIP20 token standard: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
 .*/
-pragma solidity ^0.5.11;
+pragma solidity ^0.5.12;
 
 import "./EIP20Interface.sol";
 
@@ -12,9 +12,10 @@ contract BRLT is EIP20Interface {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
 
-    string public _name= "Brazilian Real Stable Coin";
-    uint8 public _decimals = 6;
-    string public _symbol = "BRLT";
+    string public constant name= "Brazilian Real Stablecoin";
+    uint8 public constant _decimals = 18;
+    string public constant version  = "1";
+    string public constant symbol = "BRLT";
 
     constructor(
         uint256 initialAmount,
@@ -24,9 +25,9 @@ contract BRLT is EIP20Interface {
     ) public {
         balances[msg.sender] = initialAmount;               // Give the creator all initial tokens
         totalSupply = initialAmount;                        // Update total supply
-        _name = tokenName;                                   // Set the name for display purposes
-        _decimals = decimalUnits;                            // Amount of decimals for display purposes
-        _symbol = tokenSymbol;                               // Set the symbol for display purposes
+        name = tokenName;                                   // Set the name for display purposes
+        decimals = decimalUnits;                            // Amount of decimals for display purposes
+        symbol = tokenSymbol;                               // Set the symbol for display purposes
     }
 
     // Returns the name of the token
