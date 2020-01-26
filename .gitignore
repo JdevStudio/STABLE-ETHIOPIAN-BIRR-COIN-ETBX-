@@ -44,4 +44,4 @@ build/
 # docs artifacts
 docs/modules/api
 
-lib/
+src/lib/

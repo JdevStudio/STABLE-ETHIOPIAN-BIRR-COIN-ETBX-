@@ -45,7 +45,6 @@ contract BRLT is EIP20Interface {
         return _decimals;
     }
 
-
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balances[msg.sender] >= _value, "insuficient balance");
         balances[msg.sender] -= _value;

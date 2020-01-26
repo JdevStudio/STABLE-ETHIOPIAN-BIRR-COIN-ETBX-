@@ -1,6 +1,8 @@
 # Brazilian Real Stable Coin - Project Overview 
 
-This project is a tutorial around the creation of a Brazilian-real peggued stable coin based on ERC20 protocol on the Ethereum.
+This project is a exercise around the creation of a Brazilian-real peggued stable coin based on ERC20 protocol on the Ethereum. 
+
+The proposed coin will have its price around 1.0 BRL, enforced by a Seigniorage algorithm that issues more coins when the price rises and reduces supply when the price falls.
 
 # Stable Coins
 
@@ -20,7 +22,7 @@ There are three main categories of stable coins:
 - Collateralised: Coin is issued in response to collateral being pledged. Value is kept stable by various means. Ex: DAI & Synthetix.
 - Algorithmic (also called Seigniorage Shares ): Value of the coin is kept stable by algorithmically expanding or contracting the supply of coins in circulation. Ex: Terra & Ampleforth.
 
-What makes a coin to be a stablecoin is an ability to exchange it for certain amount of underlying stable asset (fiat currency in this project), and people's trust that this ability will persist in future.
+What makes a coin to be a stablecoin is an ability to exchange it for certain amount of underlying stable asset (fiat currency in this project), and people's trust that this ability will persist in future. BRLX uses the Algorithmic approach.
 
 ## Benefits
 
@@ -36,7 +38,6 @@ A crypto stable coins offer following benefits:
 
 - Government intervention
 - Reputation risk, usually related to the perceived probability of the stablecoin not being backed 1-to-1 by the related asset.
-
 
 ## Ideal Stablecoin
 
@@ -73,7 +74,7 @@ To run this project, you will need following tools:
 - Etherscan
 - [Rinkeby Authenticated Faucet](https://faucet.rinkeby.io/)
 
-# Code structure
+## Code structure
 
 The contract BRLT implements the EIP20Interface abstract interface. Code below shows the contract constructor:
 
