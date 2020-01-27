@@ -1,9 +1,8 @@
-pragma solidity ^0.5.12;
+pragma solidity 0.5.1;
 
-import "../openzeppelin-solidity/contracts/math/SafeMath.sol";
-import "../openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import "../ds-value/value.sol";
-import "Stats.sol"
+import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "./Stats.sol";
 
 interface IOracle {
     function getData() external returns (uint256, bool);
@@ -13,7 +12,7 @@ interface IOracle {
 /* Computes weighted average from all providers*/
 
 
-contract FeedAggregator is Ownable, IOracle, DSThing  {
+contract FeedAggregator is Ownable, IOracle  {
     using SafeMath for uint256;
 
     struct DataReport {
@@ -30,6 +29,9 @@ contract FeedAggregator is Ownable, IOracle, DSThing  {
     // The minimum number of valid providers
     uint256 public minimumProviders = 1;
 
+
+    uint256 public reportDelaySec = 90;
+
     // Aggregated Value
     uint128 val;
 
@@ -38,11 +40,12 @@ contract FeedAggregator is Ownable, IOracle, DSThing  {
 
     // Reports indexed by provider address. Report[0].timestamp > 0
     // indicates provider existence.
-    mapping (address => Report[2]) public providerReports;
+    mapping (address => DataReport[2]) public providerReports;
 
     event ProviderAdded(address provider);
     event ProviderRemoved(address provider);
-
+    event ReportTimestampOutOfRange(address provider);
+    event ProviderReportPushed(address provider, uint256 payload, uint256 timestamp);
 
     // Initialize the QuoteAggregator
     constructor(uint256 minimumProviders_) public {
@@ -82,37 +85,41 @@ contract FeedAggregator is Ownable, IOracle, DSThing  {
         (bytes32 val_, bool has_) = compute();
         val = uint128(val_);
         has = has_;
-        emit LogValue(val_);
+        //emit LogValue(val_);
     }
 
     function peek() external view returns (bytes32, bool) {
         return (bytes32(val), has);
     }
 
+    function getData() external returns (uint256, bool) {
+        return compute();
+    }
+    
 
     /*
     @notice computes the median of data pushed by providers
     @return computed median value
         valid: flag indicating sucess or failure in the computation
     */
-    function compute() external returns (uint256, bool) {
+    function compute() internal returns (uint256, bool) {
 
         uint256 validReportsCount = 0;
         uint256 dataFeederCount = providers.length;
 
-        uint256[] memory dataReports = new uint256[](dataFeederCount);
+        uint256[] memory validReports = new uint256[](dataFeederCount);
 
         for (uint256 i = 0; i < dataFeederCount; i++) {
             address providerAddress = providers[i];
-            Report[2] memory reports = providerReports[providerAddress];
+            DataReport[2] memory reports = providerReports[providerAddress];
             validReports[validReportsCount++] = providerReports[providerAddress][0].payload;
         }
 
-        if (size < minimumProviders) {
+        if (dataFeederCount < minimumProviders) {
             return (0, false);
         }
 
-        return Stats.computeMedian(validReports, size), true);
+        return (Stats.computeMedian(validReports, dataFeederCount), true);
     }
 
     /**
@@ -122,7 +129,7 @@ contract FeedAggregator is Ownable, IOracle, DSThing  {
     function pushReport(uint256 payload) external
     {
         address providerAddress = msg.sender;
-        Report[2] storage reports = providerReports[providerAddress];
+        DataReport[2] storage reports = providerReports[providerAddress];
         uint256[2] memory timestamps = [reports[0].timestamp, reports[1].timestamp];
 
         require(timestamps[0] > 0);

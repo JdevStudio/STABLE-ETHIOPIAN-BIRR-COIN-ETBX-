@@ -1,5 +1,6 @@
-pragma solidity ^0.4.24;
-import "../openzeppelin-solidity/contracts/math/SafeMath.sol";
+pragma solidity 0.5.1;
+import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+
 
 /**
  * @title Stats
@@ -14,7 +15,7 @@ library Stats {
      * @param size Number of elements in array to compute the median for.
      * @return Median of array.
      */
-    function computeMedian(uint256[] array, uint256 size)
+    function computeMedian(uint256[] memory array, uint256 size)
         internal
         pure
         returns (uint256)

@@ -69,10 +69,18 @@ Solidity is statically typed, supports inheritance, libraries and complex user-d
 
 To run this project, you will need following tools:
 
+- Truffle
 - Remix Ethereum - online IDE for developing smart contracts on Ethereum blockchain
 - MetaMask
 - Etherscan
 - [Rinkeby Authenticated Faucet](https://faucet.rinkeby.io/)
+
+## Compilation
+
+```
+# truffle install
+$ truffle compile
+```
 
 ## Code structure
 

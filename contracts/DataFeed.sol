@@ -1,6 +1,6 @@
-pragma solidity ^0.5.12;
+pragma solidity 0.5.1;
 
-import "../ds-thing/thing.sol";
+import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 
 interface FeedAggregator {
     function poke() external;
@@ -10,7 +10,7 @@ interface FeedAggregator {
 A DataFeed contract is a ds-value like contract that stores its value as a uint128 that is expected to be in 18 decimal fixed point notation.
 When read, it is read as a bytes32 to maintain compatibility with ds-value.
 */
-contract DataFeed is DSThing {
+contract DataFeed  {
 
     uint128       val;
     uint32 public zzz;
@@ -36,7 +36,7 @@ contract DataFeed is DSThing {
     @param zzz_ timstamp
     @param aggr_ reference for the feedAggregator object
     */
-    function poke(uint128 val_, uint32 zzz_) external note auth
+    function poke(uint128 val_, uint32 zzz_) external
     {
         val = val_;
         zzz = zzz_;
@@ -48,14 +48,14 @@ contract DataFeed is DSThing {
     @param zzz_ timestamp
     @param aggr_ reference for the feedAggregator object
     */
-    function post(uint128 val_, uint32 zzz_, FeedAggregator aggr_) external note auth
+    function post(uint128 val_, uint32 zzz_, FeedAggregator aggr_) external
     {
         val = val_;
         zzz = zzz_;
         aggr_.poke();
     }
 
-    function void() external note auth
+    function void() external
     {
         zzz = 0;
     }
