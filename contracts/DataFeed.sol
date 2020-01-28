@@ -18,6 +18,7 @@ contract DataFeed  {
     /*
     @notice Returns the latest value and flag
     */
+    /*
     function peek() external view returns (bytes32, bool)
     {
         return (bytes32(val), block.timestamp < zzz);
@@ -27,7 +28,7 @@ contract DataFeed  {
     {
         require(block.timestamp < zzz, "XXX");
         return bytes32(val);
-    }
+    }*/
 
 
     /*

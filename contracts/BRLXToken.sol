@@ -9,49 +9,53 @@ import "openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol";
 
 import "./EIP20Interface.sol";
 
-contract BRLT is EIP20Interface {
+contract BRLXToken is EIP20Interface {
 
-    uint256 constant private MAX_UINT256 = 2**256 - 1;
+    string public name= "Brazilian Real Stablecoin";
+    uint8  public decimals = 18;
+    string public version  = "1";
+    string public symbol = "BRLX";
+
+    event Transfer (address indexed _from, address indexed _to, uint256 _value);
+
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
 
-    string public constant _name= "Brazilian Real Stablecoin";
-    uint8 public constant _decimals = 18;
-    string public constant _version  = "1";
-    string public constant _symbol = "BRLT";
+    uint256 constant private MAX_UINT256 = 2**256 - 1;
 
     constructor(
-        uint256 initialAmount,
-        string memory tokenName,
-        uint8 decimalUnits,
-        string memory tokenSymbol
+        uint256 _initialAmount,
+        string memory _tokenName,
+        uint8 _decimalUnits,
+        string memory _tokenSymbol
     ) public {
-        balances[msg.sender] = initialAmount;               // Give the creator all initial tokens
-        totalSupply = initialAmount;                        // Update total supply
-        _name = tokenName;                                   // Set the name for display purposes
-        _decimals = decimalUnits;                            // Amount of decimals for display purposes
-        _symbol = tokenSymbol;                               // Set the symbol for display purposes
+        balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
+        totalSupply = _initialAmount;                        // Update total supply
+        name = _tokenName;                                   // Set the name for display purposes
+        decimals = _decimalUnits;                            // Amount of decimals for display purposes
+        symbol = _tokenSymbol;                               // Set the symbol for display purposes
     }
 
-    // Returns the name of the token
-    function name() public view returns (string memory) {
-        return _name;
-    }
+    // // Returns the name of the token
+    // function name() public view returns (string memory) {
+    //     return name;
+    // }
 
-    // Returns the ticker of the token
-    function symbol() public view returns (string memory) {
-        return _symbol;
-    }
+    // // Returns the ticker of the token
+    // function symbol() public view returns (string memory) {
+    //     return symbol;
+    // }
 
-    // Returns the number of decimals the token uses.
-    function decimals() public view returns (uint8) {
-        return _decimals;
-    }
+    // // Returns the number of decimals the token uses.
+    // function decimals() public view returns (uint8) {
+    //     return decimals;
+    // }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
-        require(balances[msg.sender] >= _value, "insuficient balance");
-        balances[msg.sender] -= _value;
-        balances[_to] += _value;
+
+        require(balances[msg.sender] >= _value, "insuficient balance"); // doesn't have enought tokens
+        balances[msg.sender] -= _value; // debit from msg.sender
+        balances[_to] += _value; // add to _to's account
         emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
         return true;
     }

@@ -33,7 +33,7 @@ contract FeedAggregator is Ownable, IOracle  {
     uint256 public reportDelaySec = 90;
 
     // Aggregated Value
-    uint128 val;
+    uint256 val;
 
     // Has Value?
     bool public has;
@@ -82,14 +82,14 @@ contract FeedAggregator is Ownable, IOracle  {
     @notice
     */
     function poke() external {
-        (bytes32 val_, bool has_) = compute();
-        val = uint128(val_);
+        (uint256 val_, bool has_) = compute();
+        val = uint256(val_);
         has = has_;
         //emit LogValue(val_);
     }
 
-    function peek() external view returns (bytes32, bool) {
-        return (bytes32(val), has);
+    function peek() external view returns (uint256, bool) {
+        return (uint256(val), has);
     }
 
     function getData() external returns (uint256, bool) {
@@ -148,7 +148,7 @@ contract FeedAggregator is Ownable, IOracle  {
 
     /**
     * @notice Authorize a new provider to send reports to the Oracle 
-      @param  Address of the provider
+      @param provider Address of the provider
     */
      function addProvider(address provider) external onlyOwner
     {
