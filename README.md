@@ -56,7 +56,7 @@ The currency will be implemented as ERC-20 token on Ethereum, then the token sma
 
 Programming language: Solidity
 Network: Ethereum
-Ticker: BRLT
+Ticker: BRLX
 Underlying currency: Brazilian Real (BRL)
 
 ## Solidity Programming Language
@@ -84,7 +84,7 @@ $ truffle compile
 
 ## Code structure
 
-The contract BRLT implements the EIP20Interface abstract interface. Code below shows the contract constructor:
+The contract BRLX implements the EIP20Interface abstract interface. Code below shows the contract constructor:
 
 ```javascript
 constructor(
@@ -103,10 +103,10 @@ constructor(
 
 ## Contract parameters for testing
 
-"10000","Brazilian Real Token","2","BRLT"
+"10000","Brazilian Real Token","2","BRLX"
 
 _initial= "10000"
 _tokenName = "Brazilian Real Token"
 _decimalUnits = "2"
-_tokenSymbol = "BRLT"
+_tokenSymbol = "BRLX"
 
