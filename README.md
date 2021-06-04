@@ -1,8 +1,8 @@
-# Brazilian Real Stable Coin - Project Overview 
+# Ethiopian Stable Coin - Project Overview 
 
-This project is a exercise around the creation of a Brazilian-real peggued stable coin based on ERC20 protocol on the Ethereum. 
+This project is a exercise around the creation of a EThiopian peggued stable coin based on ERC20 protocol on the Ethereum. 
 
-The proposed coin will have its price around 1.0 BRL, enforced by a Seigniorage algorithm that issues more coins when the price rises and reduces supply when the price falls.
+The proposed coin will have its price around 1.0 ETBS, enforced by a Seigniorage algorithm that issues more coins when the price rises and reduces supply when the price falls.
 
 # Stable Coins
 
@@ -44,11 +44,6 @@ A crypto stable coins offer following benefits:
 - [Censorship-resistant](https://medium.com/@cyrus.younessi/an-introduction-to-censorship-resistant-store-of-value-c5f4a24ca8a0) and decentralization: to be safe against governments
 - Publicaly auditable stability: the user base should be able to independently verify its legitimacy.
 
-# Brazilian Real
-
-The [Brazilian real](https://en.wikipedia.org/wiki/Brazilian_real) (sign: R$; code: BRL) is the official currency of Brazil. It is subdivided into 100 centavos. The Central Bank of Brazil is the central bank and the issuing authority.
-
-The exchange rate as of September 2015 was BRL 4.05 to US$1.00.
 
 # The code
 
@@ -56,8 +51,8 @@ The currency will be implemented as ERC-20 token on Ethereum, then the token sma
 
 Programming language: Solidity
 Network: Ethereum
-Ticker: BRLX
-Underlying currency: Brazilian Real (BRL)
+Ticker: ETHX
+Underlying currency: Brazilian Real (ETBS)
 
 ## Solidity Programming Language
 
@@ -84,7 +79,7 @@ $ truffle compile
 
 ## Code structure
 
-The contract BRLX implements the EIP20Interface abstract interface. Code below shows the contract constructor:
+The contract ETBX implements the EIP20Interface abstract interface. Code below shows the contract constructor:
 
 ```javascript
 constructor(
@@ -103,10 +98,10 @@ constructor(
 
 ## Contract parameters for testing
 
-"10000","Brazilian Real Token","2","BRLX"
+"10000","EThiopian Stable Coin","2","ETBS"
 
 _initial= "10000"
-_tokenName = "Brazilian Real Token"
+_tokenName = "EThiopian Stable Coin"
 _decimalUnits = "2"
-_tokenSymbol = "BRLX"
+_tokenSymbol = "ETBS"
 
