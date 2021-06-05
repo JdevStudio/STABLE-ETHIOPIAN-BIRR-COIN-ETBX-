@@ -22,7 +22,7 @@ There are three main categories of stable coins:
 - Collateralised: Coin is issued in response to collateral being pledged. Value is kept stable by various means. Ex: DAI & Synthetix.
 - Algorithmic (also called Seigniorage Shares ): Value of the coin is kept stable by algorithmically expanding or contracting the supply of coins in circulation. Ex: Terra & Ampleforth.
 
-What makes a coin to be a stablecoin is an ability to exchange it for certain amount of underlying stable asset (fiat currency in this project), and people's trust that this ability will persist in future. BRLX uses the Algorithmic approach.
+What makes a coin to be a stablecoin is an ability to exchange it for certain amount of underlying stable asset (fiat currency in this project), and people's trust that this ability will persist in future. ETBX uses the Algorithmic approach.
 
 ## Benefits
 
@@ -30,7 +30,7 @@ A crypto stable coins offer following benefits:
 
 - In case, the fiat currency crashes in value (due to inflation or risk of maxi-devaluation); local citizens can exchange the crashed money for EUR-backed, USD-backed, or asset-backed stablecoins before they lose their savings. In this way, people get protected from further drops in the value of the local currency.
 - Stablecoins can be used like any other currency for day-to-day purposes. From buying morning coffee to transferring funds to the family, we can use a digital wallet to pay with stable coins without potentialyl high-fees associated with the credit/debit card and banking services
-- The stable currency is especially beneficial for overseas payments, as there is no need to convert different fiat currencies. A person in China could receive BRL-backed stablecoins without converting them into Yuan.
+- The stable currency is especially beneficial for overseas payments, as there is no need to convert different fiat currencies. A person in China could receive ETBs-backed stablecoins without converting them into Yuan.
 - Simplifying P2P and recurring payments: an employer can deploy a smart contract that automatically transfers stable coins as a salary to employees at the end of the month. It is especially helpful for organizations that have employees all over the world. It will reduce the high fees and a long process of exchanging fiat currency from a bank account in New York to a European bank account.
 - Quick and affordable remittances for migrant workers: migrant workers send payments through platforms like Western Union to transfer money back to their loved ones and family. This complete process is quite expensive and slow due to which families lose a big chunk of funds due to high fees. Stablecoins can be a better alternative to this problem as workers and their families can use digital wallets across the globe to transfer stablecoins instantly with low fees and no volatility.
 
@@ -51,8 +51,8 @@ The currency will be implemented as ERC-20 token on Ethereum, then the token sma
 
 Programming language: Solidity
 Network: Ethereum
-Ticker: ETHX
-Underlying currency: Brazilian Real (ETBS)
+Ticker: ETBS
+Underlying currency: Ethiopian Birr (ETB)
 
 ## Solidity Programming Language
 
@@ -98,10 +98,10 @@ constructor(
 
 ## Contract parameters for testing
 
-"10000","EThiopian Stable Coin","2","ETBS"
+"10000","Ethiopian Birr Stable Coin","2","ETBS"
 
-_initial= "10000"
-_tokenName = "EThiopian Stable Coin"
+_initial= "100000000"
+_tokenName = "EThiopian Birr Stable Coin"
 _decimalUnits = "2"
 _tokenSymbol = "ETBS"
 
