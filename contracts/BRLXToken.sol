@@ -11,10 +11,10 @@ import "./EIP20Interface.sol";
 
 contract BRLXToken is EIP20Interface {
 
-    string public name= "Brazilian Real Stablecoin";
+    string public name= "Ethiopian Birr Stablecoin";
     uint8  public decimals = 18;
     string public version  = "1";
-    string public symbol = "BRLX";
+    string public symbol = "ETBS";
 
     event Transfer (address indexed _from, address indexed _to, uint256 _value);
 
