@@ -1,4 +1,4 @@
-![Alt text](img.jpg?raw=true "ETBX")
+![Alt text](img.png?raw=true "ETBX")
 # Ethiopian Stable Coin - Project Overview 
 
 This project is a exercise around the creation of a EThiopian peggued stable coin based on ERC20 protocol on the Ethereum. 
@@ -42,7 +42,7 @@ A crypto stable coins offer following benefits:
 
 ## Ideal Stablecoin
 
-- [Censorship-resistant](https://medium.com/@cyrus.younessi/an-introduction-to-censorship-resistant-store-of-value-c5f4a24ca8a0) and decentralization: to be safe against governments
+- [Censorship-resistant] and decentralization: to be safe against governments
 - Publicaly auditable stability: the user base should be able to independently verify its legitimacy.
 
 
@@ -52,7 +52,7 @@ The currency will be implemented as ERC-20 token on Ethereum, then the token sma
 
 Programming language: Solidity
 Network: Ethereum
-Ticker: ETBS
+Ticker: ETBX
 Underlying currency: Ethiopian Birr (ETB)
 
 ## Solidity Programming Language
@@ -99,10 +99,10 @@ constructor(
 
 ## Contract parameters for testing
 
-"10000","Ethiopian Birr Stable Coin","2","ETBS"
+"10000","Ethiopian Birr Stable Coin","2","ETBX"
 
 _initial= "100000000"
 _tokenName = "EThiopian Birr Stable Coin"
 _decimalUnits = "2"
-_tokenSymbol = "ETBS"
+_tokenSymbol = "ETBX"
 
