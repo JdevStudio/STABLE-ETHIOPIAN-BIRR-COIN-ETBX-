@@ -1,3 +1,4 @@
+![Alt text](img.jpg?raw=true "ETBX")
 # Ethiopian Stable Coin - Project Overview 
 
 This project is a exercise around the creation of a EThiopian peggued stable coin based on ERC20 protocol on the Ethereum. 
