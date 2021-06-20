@@ -19,9 +19,9 @@
  */
 
  const HDWalletProvider = require('truffle-hdwallet-provider');
-var mnemonic = "vessel theory school convince wealth true receive pattern warrior trap achieve dwarf";
- var address = "0xFc591f9364fe5b95d528E77b44D382eB434Eb1Fc"
- var infura_key = "ffea527bd15f4bfd977aa3cb330a532a";
+var mnemonic = "";
+ var address = ""
+ var infura_key = "";
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
