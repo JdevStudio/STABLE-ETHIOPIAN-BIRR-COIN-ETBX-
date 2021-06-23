@@ -1,37 +1,47 @@
-## Welcome to GitHub Pages
+![Alt text](img.png?raw=true "ETBXS")
+# Ethiopian Alogrithimically Stable Coin - Project Overview 
 
-You can use the [editor on GitHub](https://github.com/JdevStudio/STABLE-ETHIOPIAN-BIRR-COIN-ETBX-/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+# Stable Coins
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[Stable Coins](https://en.wikipedia.org/wiki/Stablecoin) are cryptocurrencies design to minimize the price's volatility relative to some asset or basket of assets.
 
-```markdown
-Syntax highlighted code block
+Advantages of a fiat-currency backed cryptocurrencies are that coins are stabilized by assets that fluctuate outside of the cryptocurrency space, that is, the underlying asset is not correlated, reducing financial risk. 
 
-# Header 1
-## Header 2
-### Header 3
+Bitcoin and altcoins are highly correlated, so that cryptocurrency holders cannot escape widespread price falls without exiting the market or taking refuge in asset backed stablecoins. 
 
-- Bulleted
-- List
+Furthermore, such coins, assuming they are managed in good faith, and have a mechanism for redeeming the asset/s backing them, are unlikely to drop below the value of the underlying physical asset, due to arbitrage. Backed stablecoins are subject to the same volatility and risk associated with the backing asset.
 
-1. Numbered
-2. List
+If the backed stablecoin is backed in a decentralized manner, then they are relatively safe from predation, but if there is a central vault, they may be robbed, of suffer loss of confidence.
 
-**Bold** and _Italic_ and `Code` text
+There are three main categories of stable coins:
 
-[Link](url) and ![Image](src)
-```
+- Centralized / IOU: A centralised controller holds an asset and creates IOUs that can be traded back in for the asset at a later date. Ex: TrueUSD & Gemini Dollar.
+- Collateralised: Coin is issued in response to collateral being pledged. Value is kept stable by various means. Ex: DAI & Synthetix.
+- Algorithmic (also called Seigniorage Shares ): Value of the coin is kept stable by algorithmically expanding or contracting the supply of coins in circulation. Ex: Terra & Ampleforth.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+What makes a coin to be a stablecoin is an ability to exchange it for certain amount of underlying stable asset (fiat currency in this project), and people's trust that this ability will persist in future. ETBX uses the Algorithmic approach.
 
-### Jekyll Themes
+## Benefits
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JdevStudio/STABLE-ETHIOPIAN-BIRR-COIN-ETBX-/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+An algorithmically stable coins offer following benefits:
 
-### Support or Contact
+- In case, the fiat currency crashes in value (due to inflation or risk of maxi-devaluation); local citizens can exchange the crashed money for EUR-backed, USD-backed, or asset-backed stablecoins before they lose their savings. In this way, people get protected from further drops in the value of the local currency.
+- Stablecoins can be used like any other currency for day-to-day purposes. From buying morning coffee to transferring funds to the family, we can use a digital wallet to pay with stable coins without potentialyl high-fees associated with the credit/debit card and banking services
+- The stable currency is especially beneficial for overseas payments, as there is no need to convert different fiat currencies. A person in China could receive ETBXS-backed stablecoins without converting them into Yuan.
+- Simplifying P2P and recurring payments: an employer can deploy a smart contract that automatically transfers stable coins as a salary to employees at the end of the month. It is especially helpful for organizations that have employees all over the world. It will reduce the high fees and a long process of exchanging fiat currency from a bank account in New York to a European bank account.
+- Quick and affordable remittances for migrant workers: migrant workers send payments through platforms like Western Union to transfer money back to their loved ones and family. This complete process is quite expensive and slow due to which families lose a big chunk of funds due to high fees. Stablecoins can be a better alternative to this problem as workers and their families can use digital wallets across the globe to transfer stablecoins instantly with low fees and no volatility.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Risk Factors of collateralised and Centralized
+
+- Government intervention
+- Reputation risk, usually related to the perceived probability of the stablecoin not being backed 1-to-1 by the related asset for example TITAN Token was one of the many in recent memeory.
+
+## Ideal Stablecoin
+
+- [Censorship-resistant] and decentralization: to be safe against governments
+- Publicaly auditable stability: the user base should be able to independently verify its legitimacy.
+
+
+
