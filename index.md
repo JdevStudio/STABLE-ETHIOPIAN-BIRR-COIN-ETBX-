@@ -1,4 +1,4 @@
-<img src="img.png" class="inline" alt="ETBXS">
+![](/img/img.png)
 # Ethiopian Alogrithimically Stable Coin - Project Overview 
 
 
